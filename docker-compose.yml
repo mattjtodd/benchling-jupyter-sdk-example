@@ -1,0 +1,11 @@
+version: "3.9"
+   
+services:
+  jupyter:
+    image: jupyter/minimal-notebook@sha256:3170ea7d1aa52a2dfbad5026eccad99a819978a98f12891c6a3059ba5d43c970
+    ports:
+      - "127.0.0.1:8888:8888"
+    volumes:
+      - $PWD:/home/jovyan/
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''"
+
